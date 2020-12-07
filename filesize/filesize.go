@@ -14,5 +14,5 @@ func main() {
 	}
 
 	fmt.Println("File size:")
-	fmt.Println(fileinfo.Size())
+	fmt.Println(fileinfo.Size(), "bytes")
 }
