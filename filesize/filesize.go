@@ -13,5 +13,6 @@ func main() {
 		log.Fatal(err)
 	}
 
+	fmt.Println("File size:")
 	fmt.Println(fileinfo.Size())
 }
