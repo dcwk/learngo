@@ -2,20 +2,25 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
+	"keyboard"
 	"log"
-	"os"
 )
 
 func main() {
-	fmt.Print("Enter a grade: ")
-	reader := bufio.NewReader(os.Stdin)
-	grade, error := reader.ReadString('\n')
+	status := "Passing!"
 
-	if error != nil {
-		log.Fatal(error)
+	fmt.Print("Enter a grade: ")
+
+	grade, err := keyboard.GetFloat()
+
+	if err != nil {
+		log.Fatal(err)
 	}
 
-	fmt.Println(grade)
+	if grade <= 60 {
+		status = "Failing!"
+	}
+
+	fmt.Println(status)
 }
