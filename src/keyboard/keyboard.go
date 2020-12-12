@@ -1,4 +1,4 @@
-// Package for reading user input
+// Package keyboard for reading user input
 package keyboard
 
 import (
@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-// Function read user input and return float value
+// GetFloat read user input and return float value
 func GetFloat() (float64, error) {
 	reader := bufio.NewReader(os.Stdin)
 
