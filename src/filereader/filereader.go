@@ -6,13 +6,15 @@ import (
 	"strconv"
 )
 
-func ReadFloat(fileName string) ([3]float64, error) {
+func ReadFloat(fileName string) ([]float64, error) {
 	file, err := os.Open(fileName)
 	scanner := bufio.NewScanner(file)
-	var numbers [3]float64
+	var fileValue float64
+	var numbers []float64
 
 	for i := 0; scanner.Scan(); i++ {
-		numbers[i], err = strconv.ParseFloat(scanner.Text(), 64)
+		fileValue, err = strconv.ParseFloat(scanner.Text(), 64)
+		numbers = append(numbers, fileValue)
 	}
 
 	err = file.Close()
