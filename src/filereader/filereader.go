@@ -12,7 +12,7 @@ func ReadFloat(fileName string) ([]float64, error) {
 	var fileValue float64
 	var numbers []float64
 
-	for i := 0; scanner.Scan(); i++ {
+	for scanner.Scan() {
 		fileValue, err = strconv.ParseFloat(scanner.Text(), 64)
 		numbers = append(numbers, fileValue)
 	}
