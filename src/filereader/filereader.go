@@ -2,26 +2,30 @@ package filereader
 
 import (
 	"bufio"
-	"fmt"
-	"log"
 	"os"
+	"strconv"
 )
 
-func Read() {
-	file, err := os.Open("C:/Projects/goTest/src/average/data/orders.txt")
+func ReadFloat(fileName string) ([]float64, error) {
+	file, err := os.Open(fileName)
 	scanner := bufio.NewScanner(file)
+	var fileValue float64
+	var numbers []float64
 
 	for scanner.Scan() {
-		fmt.Println(scanner.Text())
+		fileValue, err = strconv.ParseFloat(scanner.Text(), 64)
+		numbers = append(numbers, fileValue)
 	}
 
 	err = file.Close()
 
 	if err != nil {
-		log.Fatal(err)
+		return numbers, err
 	}
 
 	if scanner.Err() != nil {
-		log.Fatal(scanner.Err())
+		return numbers, scanner.Err()
 	}
+
+	return numbers, nil
 }
