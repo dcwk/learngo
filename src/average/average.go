@@ -20,5 +20,6 @@ func main() {
 	}
 
 	arrayLength := float64(len(numbers))
-	fmt.Printf("Average: %.2f\n", sum/arrayLength)
+	average := sum / arrayLength
+	fmt.Printf("Average: %.2f\n", average)
 }

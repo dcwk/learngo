@@ -5,6 +5,7 @@ import "fmt"
 func main() {
 	array := [5]string{"a", "b", "c", "d", "e"}
 	slice := array[1:3]
+	fmt.Println(slice)
 	slice = append(slice, "x")
 	slice = append(slice, "y", "z")
 
