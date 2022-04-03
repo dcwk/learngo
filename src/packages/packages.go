@@ -1,7 +1,7 @@
 package main
 
 import (
-	"greeting"
+	"github.com/dcwk/learngo/src/packages/greeting"
 )
 
 func main() {

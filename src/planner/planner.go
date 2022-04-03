@@ -1,8 +1,9 @@
 package main
 
 import (
-	"dates"
 	"fmt"
+
+	"github.com/dcwk/learngo/src/planner/dates"
 )
 
 func main() {
