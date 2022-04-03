@@ -1,7 +1,7 @@
 package main
 
 import (
-	"filereader"
+	"https://github.com/dcwk/learngo/filereader"
 	"fmt"
 	"log"
 )
