@@ -1,14 +1,15 @@
 package main
 
 import (
-	"https://github.com/dcwk/learngo/filereader"
 	"fmt"
 	"log"
+
+	"github.com/dcwk/learngo/src/average/filereader"
 )
 
 func main() {
 	var sum float64
-	numbers, err := filereader.ReadFloat("./data/orders.txt")
+	numbers, err := filereader.ReadFloat("./src/average/data/orders.txt")
 
 	if err != nil {
 		log.Fatal(err)
