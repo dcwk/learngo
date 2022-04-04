@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/dcwk/learngo/src/segments/average/filereader"
+	"github.com/dcwk/learngo/src/filereader"
 )
 
 func main() {
