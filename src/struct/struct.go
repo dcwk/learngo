@@ -20,17 +20,26 @@ func showInfo(p Part) string {
 }
 
 func main() {
-	var subscriber1 magazine.Subscriber
-	var subscriber2 magazine.Subscriber
-
-	subscriber1.Name = "Vasya"
-	subscriber1.Rate = 3.53
-	subscriber1.Active = true
-	subscriber2.Name = "Sanya"
-	subscriber2.Rate = 6.5
+	address := magazine.Address{
+		Street: "ulica Pushkina dom Kolotushkina",
+		City:   "Moscow",
+	}
+	subscriber1 := magazine.Subscriber{
+		Name:    "Vasya",
+		Rate:    3.53,
+		Active:  true,
+		Address: address,
+	}
+	subscriber2 := magazine.Subscriber{
+		Name:   "Sanya",
+		Rate:   6.5,
+		Active: false,
+	}
 
 	fmt.Println("Name is ", subscriber1.Name)
 	fmt.Println("Rate is ", subscriber1.Rate)
+	fmt.Println("Street is ", subscriber1.Street)
+	fmt.Printf("Address is %#v\n", subscriber1.Address)
 
 	applyDiscount(&subscriber2)
 
