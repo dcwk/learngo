@@ -1,15 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
 
-type Subscriber struct {
-	name   string
-	rate   float64
-	active bool
-}
+	"github.com/dcwk/learngo/src/struct/magazine"
+)
 
-func applyDiscount(s *Subscriber) {
-	s.rate = 9
+func applyDiscount(s *magazine.Subscriber) {
+	s.Rate = 9
 }
 
 type Part struct {
@@ -22,22 +20,22 @@ func showInfo(p Part) string {
 }
 
 func main() {
-	var subscriber1 Subscriber
-	var subscriber2 Subscriber
+	var subscriber1 magazine.Subscriber
+	var subscriber2 magazine.Subscriber
 
-	subscriber1.name = "Vasya"
-	subscriber1.rate = 3.53
-	subscriber1.active = true
-	subscriber2.name = "Sanya"
-	subscriber2.rate = 6.5
+	subscriber1.Name = "Vasya"
+	subscriber1.Rate = 3.53
+	subscriber1.Active = true
+	subscriber2.Name = "Sanya"
+	subscriber2.Rate = 6.5
 
-	fmt.Println("Name is ", subscriber1.name)
-	fmt.Println("Rate is ", subscriber1.rate)
+	fmt.Println("Name is ", subscriber1.Name)
+	fmt.Println("Rate is ", subscriber1.Rate)
 
 	applyDiscount(&subscriber2)
 
-	fmt.Println("Name is ", subscriber2.name)
-	fmt.Println("Rate is ", subscriber2.rate)
+	fmt.Println("Name is ", subscriber2.Name)
+	fmt.Println("Rate is ", subscriber2.Rate)
 
 	var screw Part
 	screw.description = "Internal screw"
