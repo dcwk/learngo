@@ -25,7 +25,7 @@ func main() {
 	}
 
 	fmt.Println(date)
-	fmt.Println(date.GetDay())
-	fmt.Println(date.GetMonth())
-	fmt.Println(date.GetYear())
+	fmt.Println(date.Day())
+	fmt.Println(date.Month())
+	fmt.Println(date.Year())
 }
