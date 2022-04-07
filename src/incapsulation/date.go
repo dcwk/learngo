@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/dcwk/learngo/src/incapsulation/date"
+	"github.com/dcwk/learngo/src/incapsulation/calendar"
 )
 
 func main() {
-	date := date.DateTime{}
+	date := calendar.DateTime{}
 	err := date.SetYear(2019)
 	if err != nil {
 		log.Fatal(err)
@@ -28,4 +28,11 @@ func main() {
 	fmt.Println(date.Day())
 	fmt.Println(date.Month())
 	fmt.Println(date.Year())
+
+	event := calendar.Event{Title: "Test event"}
+	event.SetDay(1)
+	event.SetMonth(4)
+	event.SetYear(2018)
+
+	fmt.Println("Event date is", event.Day())
 }
