@@ -29,7 +29,8 @@ func main() {
 	fmt.Println(date.Month())
 	fmt.Println(date.Year())
 
-	event := calendar.Event{Title: "Test event"}
+	event := calendar.Event{}
+	event.SetTitle("Test event")
 	event.SetDay(1)
 	event.SetMonth(4)
 	event.SetYear(2018)
