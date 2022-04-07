@@ -8,7 +8,7 @@ type DateTime struct {
 	day   int
 }
 
-func (d *DateTime) GetYear() int {
+func (d *DateTime) Year() int {
 	return d.year
 }
 
@@ -22,7 +22,7 @@ func (d *DateTime) SetYear(year int) error {
 	return nil
 }
 
-func (d *DateTime) GetMonth() int {
+func (d *DateTime) Month() int {
 	return d.month
 }
 
@@ -36,7 +36,7 @@ func (d *DateTime) SetMonth(month int) error {
 	return nil
 }
 
-func (d *DateTime) GetDay() int {
+func (d *DateTime) Day() int {
 	return d.day
 }
 
