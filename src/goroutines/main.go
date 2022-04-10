@@ -9,10 +9,12 @@ import (
 
 func main() {
 	myChannel := make(chan string)
-	go responseSize("https://example.com")
-	go responseSize("https://golang.org")
-	go responseSize("https://golang.org/doc")
+	go responseSize("https://example.com", myChannel)
+	go responseSize("https://golang.org", myChannel)
+	go responseSize("https://golang.org/doc", myChannel)
 
+	fmt.Println(<-myChannel)
+	fmt.Println(<-myChannel)
 	fmt.Println(<-myChannel)
 }
 
@@ -28,5 +30,5 @@ func responseSize(url string, channel chan string) {
 		log.Fatal(err)
 	}
 
-	channel <- url + " " + string(len(body))
+	channel <- url + " " + fmt.Sprintf("%d", len(body))
 }
