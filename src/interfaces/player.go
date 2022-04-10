@@ -21,5 +21,10 @@ func playList(device Player, songs []string) {
 		device.Play(song)
 	}
 
+	player, ok := device.(gadget.TapeRecorder)
+	if ok {
+		player.Record()
+	}
+
 	device.Stop()
 }
