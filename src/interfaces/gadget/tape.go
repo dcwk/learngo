@@ -2,15 +2,15 @@ package gadget
 
 import "fmt"
 
-type TapeGadget struct {
+type TapePlayer struct {
 	Batteriess string
 }
 
-func (t TapeGadget) Play(song string) {
-	fmt.Println("Playing: ", song)
+func (t TapePlayer) Play(song string) {
+	fmt.Println("Playing by player: ", song)
 }
 
-func (t TapeGadget) Stop() {
+func (t TapePlayer) Stop() {
 	fmt.Println("Stopped!")
 }
 
@@ -19,7 +19,7 @@ type TapeRecorder struct {
 }
 
 func (t TapeRecorder) Play(song string) {
-	fmt.Println("Playing: ", song)
+	fmt.Println("Playing by recorder: ", song)
 }
 
 func (t TapeRecorder) Stop() {
