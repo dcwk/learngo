@@ -16,6 +16,17 @@ func TestOneElement(t *testing.T) {
 	}
 }
 
+func TestEmptyElements(t *testing.T) {
+	list := []string{}
+	want := ""
+
+	got := JoinWithCommas(list)
+
+	if got != want {
+		t.Error(errorString(list, got, want))
+	}
+}
+
 func TestTwoElements(t *testing.T) {
 	list := []string{"apple", "banana"}
 	want := "apple and banana"

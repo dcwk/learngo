@@ -3,6 +3,10 @@ package prose
 import "strings"
 
 func JoinWithCommas(phrases []string) string {
+	if len(phrases) == 0 {
+		return ""
+	}
+
 	if len(phrases) == 1 {
 		return phrases[0]
 	}
