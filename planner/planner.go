@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/dcwk/learngo/src/planner/dates"
+	"github.com/dcwk/learngo/planner/dates"
 )
 
 func main() {

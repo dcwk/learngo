@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/dcwk/learngo/src/filereader"
+	"github.com/dcwk/learngo/filereader"
 )
 
 func main() {

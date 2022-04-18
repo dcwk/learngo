@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/dcwk/learngo/src/incapsulation/calendar"
+	"github.com/dcwk/learngo/incapsulation/calendar"
 )
 
 func main() {

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/dcwk/learngo/src/keyboard"
+	"github.com/dcwk/learngo/keyboard"
 )
 
 func main() {

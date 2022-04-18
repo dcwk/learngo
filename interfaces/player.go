@@ -1,6 +1,6 @@
 package main
 
-import "github.com/dcwk/learngo/src/interfaces/gadget"
+import "github.com/dcwk/learngo/interfaces/gadget"
 
 type Player interface {
 	Play(string)

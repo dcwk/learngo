@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/dcwk/learngo/src/struct/magazine"
+	"github.com/dcwk/learngo/struct/magazine"
 )
 
 func applyDiscount(s *magazine.Subscriber) {
