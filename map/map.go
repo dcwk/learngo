@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	lines, err := filereader.ReadStrings("./src/map/data/candidates.txt")
+	lines, err := filereader.ReadStrings("./map/data/candidates.txt")
 	if lines == nil {
 		log.Fatal(err)
 	}
