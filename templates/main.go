@@ -1,8 +1,10 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"text/template"
 
 	"github.com/dcwk/learngo/filereader"
@@ -10,7 +12,7 @@ import (
 )
 
 func viewHandler(writer http.ResponseWriter, request *http.Request) {
-	signatures, err := filereader.ReadStrings("./templates/signatures.txt")
+	signatures, err := filereader.ReadStrings("./templates/data/signatures.txt")
 	check(err)
 
 	html, err := template.ParseFiles("./templates/html/view.html")
@@ -34,8 +36,18 @@ func addHandler(writer http.ResponseWriter, request *http.Request) {
 
 func saveHandler(writer http.ResponseWriter, request *http.Request) {
 	signature := request.FormValue("signature")
-	_, err := writer.Write([]byte(signature))
+
+	options := os.O_WRONLY | os.O_APPEND | os.O_CREATE
+	file, err := os.OpenFile("./templates/data/signatures.txt", options, os.FileMode(0600))
 	check(err)
+
+	_, err = fmt.Fprintln(file, signature)
+	check(err)
+
+	err = file.Close()
+	check(err)
+
+	http.Redirect(writer, request, "/guestbook", http.StatusFound)
 }
 
 func check(err error) {
