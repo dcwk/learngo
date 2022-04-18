@@ -1,12 +1,12 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 	"text/template"
 
 	"github.com/dcwk/learngo/filereader"
+	"github.com/dcwk/learngo/templates/guestbook"
 )
 
 func check(err error) {
@@ -18,10 +18,15 @@ func check(err error) {
 func viewHandler(writer http.ResponseWriter, request *http.Request) {
 	signatures, err := filereader.ReadStrings("./templates/signatures.txt")
 	check(err)
-	fmt.Printf("%v\n", signatures)
+
 	html, err := template.ParseFiles("./templates/view.html")
 	check(err)
-	err = html.Execute(writer, nil)
+
+	guestbook := guestbook.Guestbook{
+		SignatureCount: len(signatures),
+		Signatures:     signatures,
+	}
+	err = html.Execute(writer, guestbook)
 	check(err)
 }
 
