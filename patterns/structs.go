@@ -28,3 +28,7 @@ func (r HotelReservationImpl) GetReservationDate() string {
 func (r HotelReservationImpl) CalculateCancellationFee() float64 {
 	return 1.0
 }
+
+type Invoice interface{}
+type HotelInvoice struct{}
+type FlightInvoice struct{}
