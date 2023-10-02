@@ -12,5 +12,4 @@ func NewReservation(vertical, reservationDate string) Reservation {
 	}
 }
 
-hotelReservation := NewReservation("hotel", "20180101")
-hotelReservation.GetReservationDate()
+//hotelReservation := NewReservation("hotel", "20180101")
